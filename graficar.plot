@@ -1,1 +1,0 @@
-splot "puntos.dat"
