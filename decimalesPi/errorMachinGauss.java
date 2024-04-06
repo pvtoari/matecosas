@@ -1,3 +1,9 @@
+/*
+    esto esta work in progress
+    tengo que usar la clase bigdecimal tambien para sacar el error
+    quiero llorar
+
+*/
 package esquizofrenia;
 
 import java.math.BigDecimal;

@@ -2,6 +2,10 @@ package esquizofrenia;
 
 import java.util.Scanner;
 
+/*
+esta clase calcula como dios manda el pi machin de gauss, pero la precision de decimales se la carga
+a las pocas iteraciones, aprox 5-6 ya vereis, por eso se usa BigDecimal
+*/
 public class piDecimalesDouble {
     public static void main(String[] args) {
 

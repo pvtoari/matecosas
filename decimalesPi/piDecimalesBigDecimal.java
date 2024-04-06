@@ -1,3 +1,12 @@
+/*
+    no se como narices funciona la clase mathcontext pero desde luego que
+    no lo hace como yo esperaba, ademas algun termino se me escapa porque
+    aplicando la machin de gauss en mathematica tengo decimales distintos para
+    distintas iteraciones, ya vere
+
+    reminder: para la proxima vez que quiera 100k decimales primero calcula su error,
+    porque hice 100k iteraciones que tomaron 7.5h cuando solo necesitaba 34k ._.
+*/
 package esquizofrenia;
 
 import java.io.File;
@@ -68,7 +77,7 @@ public class piDecimalesBigDecimal implements Serializable {
             System.out.println("Tiempo de calculo iterativo (s) : " + tt/1000d + "s");
 
             try {
-                FileWriter fw = new FileWriter("C:\\Users\\ariel\\Desktop\\cpupv\\esquizofrenia\\pi.txt");
+                FileWriter fw = new FileWriter("pi.txt");
                 fw.write(sum.toString());
                 fw.close();
                 System.out.println("Resultado guardado");
@@ -77,6 +86,7 @@ public class piDecimalesBigDecimal implements Serializable {
             }
         }
     
+    //antiguo codigo lo conservo por amor al pasado
     public static void main2(String[] args) {
 
         MathContext mc = new MathContext(10, RoundingMode.HALF_UP);
