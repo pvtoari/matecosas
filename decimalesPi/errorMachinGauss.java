@@ -4,10 +4,9 @@
     quiero llorar
 
 */
-package esquizofrenia;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+//import java.math.BigDecimal;
+//import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class errorMachinGauss {
@@ -17,6 +16,8 @@ public class errorMachinGauss {
 
         System.out.print("Número de decimales correctos (p): ");
         int p = kbd.nextInt(), n = 0;
+
+        kbd.close();
         
         while(true) {
             double aNmas1= 1/(2*n+3)*(12/Math.pow(18, 2*n+3)+8/Math.pow(57, 2*n+3)+5/Math.pow(239, 2*n+3));
@@ -36,8 +37,8 @@ public class errorMachinGauss {
         BigDecimal ocho = new BigDecimal(8);
         BigDecimal cinco = new BigDecimal(5);
         BigDecimal dieciocho = new BigDecimal(18);
-        BigDecimal cincuentaisiete = new BigDecimal(57);
-        BigDecimal doscientosTreintainueve = new BigDecimal(239);
+        BigDecimal cincuentaysiete = new BigDecimal(57);
+        BigDecimal doscientosTreintaynueve = new BigDecimal(239);
 
         BigDecimal aNmas1 = uno.divide(dosNmasTres, 10, RoundingMode.HALF_UP)
                 .multiply(doce.divide(dieciocho.pow(dosNmasTres.intValue()), 10, RoundingMode.HALF_UP)

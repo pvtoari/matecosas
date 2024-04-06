@@ -1,11 +1,10 @@
-package esquizofrenia;
-
 import java.util.Scanner;
 
 /*
 esta clase calcula como dios manda el pi machin de gauss, pero la precision de decimales se la carga
 a las pocas iteraciones, aprox 5-6 ya vereis, por eso se usa BigDecimal
 */
+
 public class piDecimalesDouble {
     public static void main(String[] args) {
 
@@ -14,6 +13,8 @@ public class piDecimalesDouble {
         System.out.print("Ene porfi: ");
         int n = kbd.nextInt();
         double sum = 0;
+
+        kbd.close();
 
         for(int i = 0; i <= n; i++) {
             sum += Math.pow(-1, i)/(2*i+1)*(

@@ -7,9 +7,7 @@
     reminder: para la proxima vez que quiera 100k decimales primero calcula su error,
     porque hice 100k iteraciones que tomaron 7.5h cuando solo necesitaba 34k ._.
 */
-package esquizofrenia;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
@@ -29,6 +27,8 @@ public class piDecimalesBigDecimal implements Serializable {
 
         System.out.print("Número de decimales: ");
         int k = kbd.nextInt();
+
+        kbd.close();
 
         BigDecimal sum = new BigDecimal("0");
         MathContext mc = new MathContext(k, RoundingMode.HALF_UP);
