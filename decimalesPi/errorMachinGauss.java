@@ -1,6 +1,7 @@
 /*
     esto esta work in progress
     tengo que usar la clase bigdecimal tambien para sacar el error
+    no funciona bien por ahora
     quiero llorar
 
 */
@@ -18,7 +19,7 @@ public class errorMachinGauss {
         int p = kbd.nextInt(), n = 0;
 
         kbd.close();
-        
+
         while(true) {
             double aNmas1= 1/(2*n+3)*(12/Math.pow(18, 2*n+3)+8/Math.pow(57, 2*n+3)+5/Math.pow(239, 2*n+3));
             if(aNmas1 < Math.pow(10, -p-1)) {
