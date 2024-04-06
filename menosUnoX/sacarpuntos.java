@@ -18,7 +18,7 @@ public class sacarpuntos {
 
         kbd.close();
 
-        try (FileWriter file = new FileWriter("puntos.dat")) {
+        try (FileWriter file = new FileWriter("//workspaces//matecosas//menosUnoX//puntos.dat")) {
 
             while (-dom <= x && x <= dom) {
                 i++;

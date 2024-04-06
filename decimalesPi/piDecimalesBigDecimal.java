@@ -70,14 +70,14 @@ public class piDecimalesBigDecimal implements Serializable {
             tf = System.currentTimeMillis();
             tt = tf-ti;
 
-            System.out.println("\n \n" + sum);
+            //System.out.println("\n \n" + sum);
             //System.out.println("Error respecto Math.PI: " + Math.abs((Math.PI - sum)));
             System.out.println("\n"+ "Numero de iteraciones: " + (n+1));
             System.out.println("Tiempo de calculo iterativo (ms) : " + tt + "ms");
             System.out.println("Tiempo de calculo iterativo (s) : " + tt/1000d + "s");
 
             try {
-                FileWriter fw = new FileWriter("pi.txt");
+                FileWriter fw = new FileWriter("//workspaces//matecosas//menosUnoX//pi.txt");
                 fw.write(sum.toString());
                 fw.close();
                 System.out.println("Resultado guardado");
