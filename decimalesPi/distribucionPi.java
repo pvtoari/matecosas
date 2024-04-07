@@ -3,62 +3,39 @@ import java.util.*;
 
 public class distribucionPi {
     public static void main(String[] args) {
-        try {
-            FileReader fr = new FileReader("//workspaces//matecosas//menosUnoX//pi.txt");
-            int read = fr.read();
-            System.out.println(read);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
+        String input = "";
+        int[] nums = new int[10];
 
-    static class FastReader { 
-            BufferedReader br; 
-            StringTokenizer st; 
-      
-            public FastReader() 
-            { 
-                br = new BufferedReader( 
-                    new InputStreamReader(System.in)); 
-            } 
-      
-            String next() 
-            { 
-                while (st == null || !st.hasMoreElements()) { 
-                    try { 
-                        st = new StringTokenizer(br.readLine()); 
-                    } 
-                    catch (IOException e) { 
-                        e.printStackTrace(); 
-                    } 
-                } 
-                return st.nextToken(); 
-            } 
-      
-            int nextInt() { return Integer.parseInt(next()); } 
-      
-            long nextLong() { return Long.parseLong(next()); } 
-      
-            double nextDouble() 
-            { 
-                return Double.parseDouble(next()); 
-            } 
-      
-            String nextLine() 
-            { 
-                String str = ""; 
-                try { 
-                    if(st.hasMoreTokens()){ 
-                        str = st.nextToken("\n"); 
-                    } 
-                    else{ 
-                        str = br.readLine(); 
-                    } 
-                } 
-                catch (IOException e) { 
-                    e.printStackTrace(); 
-                } 
-                return str; 
-            } 
+        try {
+            Scanner kbd = new Scanner(new File("//workspaces//matecosas//decimalesPi//pi.txt"));
+            input = kbd.nextLine();
+            kbd.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+
+        for(int i = 0; i < input.length(); i++) { //algo anda mal aqui porque la suma del recuento != longitud del input-2
+            switch(input.charAt(i)) {
+                case '0': nums[0]++;
+                case '1': nums[1]++;
+                case '2': nums[2]++;
+                case '3': nums[3]++;
+                case '4': nums[4]++;
+                case '5': nums[5]++;
+                case '6': nums[6]++;
+                case '7': nums[7]++;
+                case '8': nums[8]++;
+                case '9': nums[9]++;
+            }
+        }
+
+        nums[3]--; //como estoy evaluando el "3.14...." descuento un tres de las apariciones del tres en los decimales
+
+        String res = "";
+        for(int i = 0; i < nums.length; i++) {
+            res += "Cantidad de " + i + "s" + " -> " + nums[i] + "\n";
+        }
+
+        System.out.println(res);
+    }
 }

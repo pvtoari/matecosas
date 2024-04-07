@@ -22,16 +22,17 @@ public class piDecimalesBigDecimal implements Serializable {
         Scanner kbd = new Scanner(System.in);
         String anim= "|/-\\";
         
-        System.out.print("Ene porfi: ");
+        System.out.print("Numero de iteraciones: ");
         int n = kbd.nextInt();
+        n--;
 
-        System.out.print("Número de decimales: ");
+        System.out.print("Numero de decimales: ");
         int k = kbd.nextInt();
 
         kbd.close();
 
         BigDecimal sum = new BigDecimal("0");
-        MathContext mc = new MathContext(k, RoundingMode.HALF_UP);
+        MathContext mc = new MathContext(k/2, RoundingMode.HALF_UP);
 
         
 
@@ -78,10 +79,10 @@ public class piDecimalesBigDecimal implements Serializable {
 
             try {
                 FileWriter fw = new FileWriter("//workspaces//matecosas//decimalesPi//pi.txt");
-                fw.write(sum.toString());
+                fw.write(sum.toString().substring(0, k+2));
                 fw.close();
-                System.out.println("Resultado guardado");
-                System.out.println("Caracteres: " + sum.toString().length());
+                System.out.println("Resultado guardado y recortado a " + k + " decimales");
+                System.out.println("Caracteres generados originalmente: " + sum.toString().length());
             } catch (IOException e) {
                 e.printStackTrace();
             }
