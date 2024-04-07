@@ -81,6 +81,7 @@ public class piDecimalesBigDecimal implements Serializable {
                 fw.write(sum.toString());
                 fw.close();
                 System.out.println("Resultado guardado");
+                System.out.println("Caracteres: " + sum.toString().length());
             } catch (IOException e) {
                 e.printStackTrace();
             }
