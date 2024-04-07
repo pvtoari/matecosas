@@ -77,7 +77,7 @@ public class piDecimalesBigDecimal implements Serializable {
             System.out.println("Tiempo de calculo iterativo (s) : " + tt/1000d + "s");
 
             try {
-                FileWriter fw = new FileWriter("//workspaces//matecosas//menosUnoX//pi.txt");
+                FileWriter fw = new FileWriter("//workspaces//matecosas//decimalesPi//pi.txt");
                 fw.write(sum.toString());
                 fw.close();
                 System.out.println("Resultado guardado");
