@@ -1,8 +1,9 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.*;
 
-public class sacarpuntos {
+public class sacarpuntos implements Serializable {
 
     public static void main(String[] args) {
 
