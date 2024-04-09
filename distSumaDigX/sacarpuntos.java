@@ -15,6 +15,8 @@ public class sacarpuntos implements Serializable {
         final double dom = kbd.nextInt();
 
         String salida = "";
+        String anim= "|/-\\";
+
         int i = 0;
         long ti, tf;
 
@@ -24,6 +26,10 @@ public class sacarpuntos implements Serializable {
 
             ti = System.currentTimeMillis();
             while(i<=dom) {
+                String data = "\r" + anim.charAt(i % anim.length()) + " " + i + " (" + (System.currentTimeMillis()-ti)/1000d + " s)";
+                System.out.write(data.getBytes());
+                //Thread.sleep(1);
+
                 salida += i + " " + sumaD(i) + "\n";
                 i++;
             }
@@ -31,7 +37,7 @@ public class sacarpuntos implements Serializable {
 
             file.write(salida);
 
-            System.out.println(i + " puntos generados.");
+            System.out.println("\nTiempo de calculo y escritura: " + (tf-ti)/1000d + " ms.");
             System.out.println(i + " puntos generados.");
             System.out.println("Puntos escritos correctamente.");
         } catch (IOException e) {
