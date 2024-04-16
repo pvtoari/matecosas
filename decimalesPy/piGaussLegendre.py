@@ -1,6 +1,8 @@
 from decimal import Decimal, getcontext
 
 def gauss(decimales):
+    anim= "|/-\\"
+    
     getcontext().prec = decimales + 2
     a = Decimal(1)
     b = Decimal(1) / Decimal(2).sqrt()
@@ -20,14 +22,26 @@ def gauss(decimales):
         if pi == pi_prev:
             break
         pi_prev = pi
-        print(cont)
+        
+        ##data = anim[cont % len(anim)]
+        ##out = data.encode('utf-8')
+        ##print(out, end="\r")
+        
+        ##data = "\r" + anim[cont % len(anim)] + " " + str(cont)
+        ##encoded_data = data.encode('utf-8')  # Encode using UTF-8 encoding
+        ##print(encoded_data)
+        
+        progress = anim[cont % len(anim)]
+        print(f"\r{progress} {cont}", end="")
     
     return str(pi)[:-1]
     
 def main():
-    decimales = input("Numero de decimales: ")
+    decimales = int(input("Numero de decimales: "))
     pito = gauss(decimales)
-    print(pito)
+    f = open("/workspaces/matecosas/decimalesPy/pi.txt", "w")
+    f.write(pito)
+    print("\n"+"Resultado guardado en pi.txt")
 
 if __name__ == "__main__":
     main()
