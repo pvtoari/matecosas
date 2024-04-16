@@ -14,18 +14,28 @@ public class distribucionPi {
             e.printStackTrace();
         }
 
-        for(int i = 0; i < input.length(); i++) { //algo anda mal aqui porque la suma del recuento != longitud del input-2
+        for(int i = 0; i < input.length(); i++) {
             switch(input.charAt(i)) {
                 case '0': nums[0]++;
+                    break;
                 case '1': nums[1]++;
+                    break;
                 case '2': nums[2]++;
+                    break;
                 case '3': nums[3]++;
+                    break;
                 case '4': nums[4]++;
+                    break;
                 case '5': nums[5]++;
+                    break;
                 case '6': nums[6]++;
+                    break;
                 case '7': nums[7]++;
+                    break;
                 case '8': nums[8]++;
+                    break;
                 case '9': nums[9]++;
+                    break;
             }
         }
 
