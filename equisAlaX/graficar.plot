@@ -1,1 +1,1 @@
-splot "puntos.dat"
+splot "puntos.dat" with points palette pointsize 0.5 pointtype 7
