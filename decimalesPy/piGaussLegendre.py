@@ -1,5 +1,6 @@
 from decimal import Decimal, getcontext
 import datetime;
+import time;
 
 def gauss(decimales):
     anim= "|/-\\"
@@ -11,6 +12,9 @@ def gauss(decimales):
     p = Decimal(1)
     pi_prev = Decimal(0)
     cont = 0;
+    
+    ti = time.time()
+    
     while True:
         cont += 1
         a_next = (a + b) / Decimal(2)
@@ -24,8 +28,10 @@ def gauss(decimales):
             break
         pi_prev = pi
         
-        progress = anim[cont % len(anim)]
-        print(f"\r{progress} {cont}", end="")
+        tf = time.time()
+        
+        progress = "\r" + anim[cont % len(anim)] + " " + str(cont) + " (" + str(round((tf-ti) * 1000.0)) + " ms)"
+        print(progress, end="")
     
     return str(pi)[:-1]
     
