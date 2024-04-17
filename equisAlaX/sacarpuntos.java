@@ -11,9 +11,12 @@ public class sacarpuntos implements Serializable {
         
         System.out.println("Dominio [-x,x]: ");
         final double dom = kbd.nextInt();
-        System.out.println("Número de subdivisiones ");
+        System.out.println("Numero de subdivisiones: ");
         final double divs = kbd.nextInt();
-        double x = -dom, Re, Im;
+        System.out.println("Orden de superficie: ");
+        final double n = kbd.nextInt();
+
+        double x, Re, Im;
         int i = 0;
         String salida = "";
 
@@ -25,30 +28,35 @@ public class sacarpuntos implements Serializable {
         try (FileWriter file = new FileWriter("//workspaces//matecosas//equisAlaX//puntos.dat")) {
 
             ti = System.currentTimeMillis();
-            while (-dom <= x && x <= dom) {
+            for(int k=0; k <=n; k++) {
+                i=0;
+                x=-dom;
 
-
-                i++;
-                x += dom/divs;
-                Re = Math.cos(Math.PI * x);
-                Im = Math.sin(Math.PI * x);
-                //salida += x + " " + Re + " " + Im + "\n";
-                double absX= Math.abs(x);
-                if(x>0) {
-                    salida += x + " " + Math.pow(absX, absX) + " " + "0.0" + "\n"; 
-                } else if(x<0) {
-                    salida += x + " " + Math.pow(absX, x)*Re + " " + Math.pow(absX, x)*Im + "\n";
+                while (-dom <= x && x <= dom) {
+                    i++;
+                    x += dom/divs;
+                    Re = Math.cos(n*Math.PI * x);
+                    Im = Math.sin(n*Math.PI * x);
+                    //salida += x + " " + Re + " " + Im + "\n";
+                    double absX= Math.abs(x);
+                    if(x>0) {
+                        salida += x + " " + Math.pow(absX, absX) + " " + "0.0" + "\n"; 
+                    } else if(x<0) {
+                        salida += x + " " + Math.pow(absX, x)*Re + " " + Math.pow(absX, x)*Im + "\n";
+                    }
+    
+                    String data = "\r" + anim.charAt(i % anim.length()) + " " + i + " (" + (System.currentTimeMillis()-ti)/1000d + " s)";
+                    System.out.write(data.getBytes());
                 }
 
-                String data = "\r" + anim.charAt(i % anim.length()) + " " + i + " (" + (System.currentTimeMillis()-ti)/1000d + " s)";
-                System.out.write(data.getBytes());
+                System.out.println("\r" + "Orden " + k + " de puntos generado");
             }
             tf = System.currentTimeMillis();
 
             tt=tf-ti;
 
             file.write(salida);
-            System.out.println("\n" + i + " puntos generados");
+            System.out.println("\n" + i*n + " puntos generados");
             System.out.println("Puntos guardados y formateados en /puntos.dat");
             System.out.println("Tiempo de calculo iterativo (ms) : " + tt + "ms");
             System.out.println("Tiempo de calculo iterativo (s) : " + tt/1000d + "s");
