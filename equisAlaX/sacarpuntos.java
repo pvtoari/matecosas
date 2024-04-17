@@ -28,7 +28,7 @@ public class sacarpuntos implements Serializable {
         try (FileWriter file = new FileWriter("//workspaces//matecosas//equisAlaX//puntos.dat")) {
 
             ti = System.currentTimeMillis();
-            for(int k=0; k <=n; k++) {
+            for(double k=0; k <=n; k+=0.2) {
                 i=0;
                 x=-dom;
 
@@ -49,7 +49,7 @@ public class sacarpuntos implements Serializable {
                     System.out.write(data.getBytes());
                 }
 
-                System.out.println("\r" + "Orden " + k + " de puntos generado");
+                System.out.println("\r" + "Generado orden " + k + " de puntos");
             }
             tf = System.currentTimeMillis();
 
