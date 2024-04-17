@@ -38,7 +38,7 @@ Resultado guardado en pi.txt
 
 <strong>Nota: </strong>el programa está pensado para correr en un Codespaces dentro de este repositorio original, si quieres obtener la salida en un fork, deberás cambiar la ruta del objeto file. 
 ```
-f = open("/workspaces/matecosas/TUREPOSITORIO/pi.txt", "w")
+f = open("/workspaces/matecosas/TUREPOSITORIO/calcs/pi[instante].txt", "w")
 ```
 
 Para cualquier otro caso simplemente reemplazar la ruta de escritura por la deseada por el usuario (seguramente se acabe determinando por consola, stay tuned)

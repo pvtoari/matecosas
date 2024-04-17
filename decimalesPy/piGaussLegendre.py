@@ -24,14 +24,6 @@ def gauss(decimales):
             break
         pi_prev = pi
         
-        ##data = anim[cont % len(anim)]
-        ##out = data.encode('utf-8')
-        ##print(out, end="\r")
-        
-        ##data = "\r" + anim[cont % len(anim)] + " " + str(cont)
-        ##encoded_data = data.encode('utf-8')  # Encode using UTF-8 encoding
-        ##print(encoded_data)
-        
         progress = anim[cont % len(anim)]
         print(f"\r{progress} {cont}", end="")
     
