@@ -4,7 +4,7 @@
   
 <br>
 
-$\pi \approx \frac{(a_{n}+b_{n})^2}{4t_{n}}$
+$$\pi \approx \frac{(a_{n}+b_{n})^2}{4t_{n}}$$
 
 </h1>
 
