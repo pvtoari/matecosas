@@ -1,4 +1,5 @@
 from decimal import Decimal, getcontext
+import datetime;
 
 def gauss(decimales):
     anim= "|/-\\"
@@ -39,9 +40,9 @@ def gauss(decimales):
 def main():
     decimales = int(input("Numero de decimales: "))
     pito = gauss(decimales)
-    f = open("/workspaces/matecosas/decimalesPy/pi.txt", "w")
+    f = open("/workspaces/matecosas/decimalesPy/calcs/pi_"+ str(datetime.datetime.now()) + ".txt", "w")
     f.write(pito)
-    print("\n"+"Resultado guardado en pi.txt")
+    print("\n"+"Resultado guardado en -> calcs/..")
 
 if __name__ == "__main__":
     main()
